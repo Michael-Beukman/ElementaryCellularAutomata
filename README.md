@@ -1,6 +1,8 @@
 # Elementary Cellular Automata
 This explores [Elementary Cellular Automata](https://en.wikipedia.org/wiki/Elementary_cellular_automaton#:~:text=In%20mathematics%20and%20computability%20theory,and%20its%20two%20immediate%20neighbors.).
-You can simply open index.html in a browser, or visit the live [Demo](https://8onitsside.com/demos/eca/).
+You can simply open index.html in a browser, or visit the live [demo](https://8onitsside.com/demos/eca/).
+
+There are a few configuration options to change the behaviour.
 
 ![Example](gifs/small.gif)
 ![Example Larger](gifs/large.gif)
