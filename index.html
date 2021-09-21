@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cellular Automata</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="lib/bootstrap.min.css" />
+  </head>
+
+  <body class="h-100">
+    <div class="container-fluid h-100 bg-light">
+      <div class="row d-md-none">
+        <button
+          class="btn btn-primary navbar-expand-sm"
+          data-toggle="collapse"
+          data-target="#options"
+        >
+          Options
+        </button>
+      </div>
+      <div class="row h-100">
+        <div class="col-sm-2 col-12 collapse d-md-block" id="options">
+          <h2>Elementary Cellular Automata</h2>
+          See
+          <a href="https://en.wikipedia.org/wiki/Elementary_cellular_automaton"
+            >here</a
+          >.
+          <hr />
+          <form onSubmit="return formSubmit();">
+            <div class="form-group">
+              <label for="inpRule">0 <= Rule <= 255</label>
+              <br />
+              <small
+                >110, 101, 60, 90 105, 122, 129 are all quite interesting</small
+              >
+              <!-- 105 with 10010101001 looks cool -->
+              <input
+                type="number"
+                id="inpRule"
+                value="90"
+                min="0"
+                max="255"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inpStart">Start.</label>
+              <br />
+              <small
+                >The center pixels will start like this. Can be of any length <=
+                101. Must contain only 1s and 0s</small
+              >
+              <input
+                type="text"
+                pattern="^[10]([10][10])*$"
+                id="inpStart"
+                class="form-control"
+                value="10010101001"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="inpNumBlocks">Number of Blocks to show at once</label>
+              <br />
+              <small>Square number [1, 256]</small>
+              <input
+                type="number"
+                id="inpNumBlocks"
+                class="form-control"
+                value="256"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="inpSpeed">Speed</label>
+              <br />
+              <small>Aka FPS</small>
+              <input
+                type="number"
+                id="inpSpeed"
+                class="form-control"
+                value="20"
+                min="0"
+                max="120"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="inpTiles">Number of tiles</label>
+              <br />
+              <input
+                type="number"
+                id="inpTiles"
+                class="form-control"
+                value="21"
+                min="11"
+                max="201"
+              />
+            </div>
+            <button class="btn btn-primary" id="btnChoose">
+              Change options
+            </button>
+          </form>
+        </div>
+        <div id="canvasDiv" class="col-sm-10 col-12 h-100"></div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="lib/p5/p5.min.js"></script>
+    <script src="js/sketch.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
